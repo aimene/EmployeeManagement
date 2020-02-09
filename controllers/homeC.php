@@ -9,7 +9,7 @@ class HomeController {
         echo '</head>';
         echo '<body>';
         include VIEWS.DS.'common'.DS.'nav.php';
-        include VIEWS.DS.'home_'.strtolower($viewname);
+        include VIEWS.DS.'home_'.strtolower($viewname).'.php';
         include VIEWS.DS.'common'.DS.'bs_js.php';
         echo '<body>';
     }
