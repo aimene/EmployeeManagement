@@ -27,7 +27,6 @@ class EmployeeModel {
       try {
         $dbh = new PDO('mysql:host=localhost;dbname=adw', 'root', '');
         $stmt=$dbh->prepare($sql);
-        $id=270;
         $stmt->bindParam(":id",$id);
         $res=($stmt->execute())?$stmt->fetchAll(PDO::FETCH_OBJ): null;
         $dbh = null;

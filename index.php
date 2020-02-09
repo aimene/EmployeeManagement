@@ -31,6 +31,15 @@ if (isset($_GET['m'])){
 	$method='index';
 }
 
+// =====================  Détermination de la id à utiliser: Est-ce que j'ai un paramètre 'id' dans mon URL?
+if (isset($_GET['id'])){
+  //Il y a un paramètre de précisé: c'est l'identifiant
+$id=strtolower(trim($_GET['id']));
+}else{
+//Pas de paramètre => la méthode par défaut est la méthode INDEX
+$id=null;
+}
+
 // =====================  Appel
 //On construit le nom du fichier qui contient le contrôleur appelé (ou le contrôleur par défaut)
 $controllerfilename=$controller.'C.php';
@@ -41,7 +50,10 @@ $controllerclassname=ucfirst($controller).'Controller';
 //On instancie cette classe
 $c=new $controllerclassname();
 //On appelle la méthode demandée (ou la méthode par défaut)
-$c->$method();
+if (!is_null($id))
+  $c->$method($id);
+else
+  $c->$method();
 
 
 ?>
