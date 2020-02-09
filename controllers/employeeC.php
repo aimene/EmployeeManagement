@@ -13,7 +13,7 @@ class EmployeeController {
       echo '</head>';
       echo '<body>';
       include VIEWS.DS.'common'.DS.'nav.php';
-      include VIEWS.DS.'home_'.strtolower($viewname).'.php';
+      include VIEWS.DS.'employee_'.strtolower($viewname).'.php';
       include VIEWS.DS.'common'.DS.'bs_js.php';
       echo '<body>';
   }
