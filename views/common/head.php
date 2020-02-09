@@ -4,7 +4,7 @@
 <meta name="author" content="">
 <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
 
-<title>Starter Template for Bootstrap</title>
+<title>UHA - archiweb - tds</title>
 
 <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/starter-template/">
 
