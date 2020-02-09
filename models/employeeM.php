@@ -6,7 +6,7 @@ class EmployeeModel {
       from employee as E
       inner join contact as C on E.ContactID=C.ContactID';
       try {
-        $dbh = new PDO('mysql:host=localhost;dbname=adw', 'root', '');
+        $dbh = new PDO('mysql:host=localhost;dbname=adw;charset=utf8', 'root', '');
         $stmt=$dbh->prepare($sql);
         //$stmt->bindParam(":var",$var);
         $res=($stmt->execute())?$stmt->fetchAll(PDO::FETCH_OBJ): null;
@@ -25,7 +25,7 @@ class EmployeeModel {
       left join contact as CM on EM.ContactID=CM.ContactID
       where E.EmployeeID=:id';
       try {
-        $dbh = new PDO('mysql:host=localhost;dbname=adw', 'root', '');
+        $dbh = new PDO('mysql:host=localhost;dbname=adw;charset=utf8', 'root', '');
         $stmt=$dbh->prepare($sql);
         $stmt->bindParam(":id",$id);
         $res=($stmt->execute())?$stmt->fetchAll(PDO::FETCH_OBJ): null;
