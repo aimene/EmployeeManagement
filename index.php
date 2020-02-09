@@ -11,6 +11,7 @@ define('CONTROLLERS', ROOT.DS.'controllers');
 define('VIEWS', ROOT.DS.'views');
 define('MODELS', ROOT.DS.'models');
 define('VENDORS', ROOT.DS.'vendors');
+define('CLASSES', ROOT.DS.'classes');
 
 // =====================  Détermination du controleur à utiliser: Est-ce que j'ai un paramètre 'c' dans mon URL?
 if (isset($_GET['c'])){
