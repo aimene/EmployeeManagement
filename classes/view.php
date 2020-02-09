@@ -1,7 +1,7 @@
 <?php
-class Controller {
+class View {
   public function construct(){}
-  public function renderview($controller, $viewname){
+  public function render($controllername,$viewname){
       echo '<!doctype html>';
       echo '<html lang="fr">';
       echo '<head>';
@@ -9,7 +9,7 @@ class Controller {
       echo '</head>';
       echo '<body>';
       include VIEWS.DS.'common'.DS.'nav.php';
-      include VIEWS.DS.strtolower($controller).'_'.strtolower($viewname).'.php';
+      include VIEWS.DS.strtolower($controllername).'_'.strtolower($viewname).'.php';
       include VIEWS.DS.'common'.DS.'bs_js.php';
       echo '<body>';
   }

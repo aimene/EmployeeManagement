@@ -1,10 +1,11 @@
 <?php
-require_once CLASSES.DS.'controller.php';
-class EmployeeController extends Controller {
+class EmployeeController {
     public function construct(){}
 
     public function list(){
-      $this->renderview('employee','list');
+      require_once CLASSES.DS.'view.php';
+      $v=new View();
+      $v->render('employee','list');
     }
 }
 ?>
