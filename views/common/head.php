@@ -2,14 +2,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="">
 <meta name="author" content="">
-<link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
 
 <title>UHA - archiweb - tds</title>
-
-<link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/starter-template/">
 
 <!-- Bootstrap core CSS -->
 <link href="./vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 
-<!-- Custom styles for this template -->
-<link href="starter-template.css" rel="stylesheet">
+<!-- Font Awesome Icons Free 5.12.1 CSS -->
+  <link href="./vendors/fontawesome/css/fontawesome.min.css" rel="stylesheet">
+  <link href="./vendors/fontawesome/css/brands.min.css" rel="stylesheet">
+  <link href="./vendors/fontawesome/css/solid.min.css" rel="stylesheet">
