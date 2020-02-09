@@ -1,10 +1,9 @@
 <?php
 function fAge($date) {
-    $age = date('Y') - date('Y', strtotime($date));
-    if (date('md') < date('md', strtotime($date))) {
-    return $age - 1;
-    }
-    return $age;
+  $datetime1 = new DateTime("today");
+  $datetime2 = new DateTime($date);
+  $interval = $datetime2->diff($datetime1);
+  return $interval->format('%y');
   }  ?>
 <main role="main" class="container">
     <div class="starter-template">
@@ -58,6 +57,7 @@ object(stdClass)[6]
       <?php if (isset($e->MiddleName)) echo $e->MiddleName.' '; ?>
       <?php if (isset($e->LastName)) echo $e->LastName.' '; ?>
       <?php if (isset($e->Suffix)) echo $e->Suffix; ?>
+      <?php if (isset($e->EmployeeID)) echo ' <a href="index.php?c=employee&m=edit&id='.$e->EmployeeID.'" class="btn btn-warning btn-sm" data-toggle="tooltip" title="Modifier l\'employé"><i class="fas fa-edit"></i> Modifier</a>';?>
     </h3>
   </div>
 
@@ -82,7 +82,7 @@ object(stdClass)[6]
   <div class="row">
     <label class="col-md-4 control-label">Date d'entrée dans l'entreprise :</label>
     <div class="col-md-8">
-      <?php if (isset($e->HireDate)) echo date('d/m/Y',strtotime($e->HireDate)); ?>
+      <?php if (isset($e->HireDate)) echo date('d/m/Y',strtotime($e->HireDate)). ' ('.fAge($e->HireDate).' ans d\'ancienneté)'; ?>
     </div>
   </div>
   <div class="row">
@@ -141,6 +141,7 @@ object(stdClass)[6]
       <?php if (isset($e->CMMiddleName)) echo ' '.$e->CMMiddleName; ?>
       <?php if (isset($e->CMLastName)) echo ' '.$e->CMLastName; ?>
       <?php if (isset($e->EMTitle)) echo ' ('.$e->EMTitle.')'; ?>
+      <?php if (isset($e->ManagerID)) echo ' <a href="index.php?c=employee&m=view&id='.$e->ManagerID.'" class="btn btn-success btn-sm" data-toggle="tooltip" title="Modifier l\'employé"><i class="fas fa-eye"></i> Voir</a>';?>
     </div>
   </div>
   <div class="row">
