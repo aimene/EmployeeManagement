@@ -2,10 +2,10 @@
 class EmployeeController {
     public function construct(){}
     public function list(){
-      $this->renderview('list');
+      $this->renderview('employee','list');
     }
 
-    public function renderview($viewname){
+    public function renderview($controller, $viewname){
       echo '<!doctype html>';
       echo '<html lang="fr">';
       echo '<head>';
@@ -13,7 +13,7 @@ class EmployeeController {
       echo '</head>';
       echo '<body>';
       include VIEWS.DS.'common'.DS.'nav.php';
-      include VIEWS.DS.'employee_'.strtolower($viewname).'.php';
+      include VIEWS.DS.strtolower($controller).'_'.strtolower($viewname).'.php';
       include VIEWS.DS.'common'.DS.'bs_js.php';
       echo '<body>';
   }
